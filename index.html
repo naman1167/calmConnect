@@ -1,1 +1,99 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalmConnect - MoodSpace Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|DM+Sans:400,700|Quicksand:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="splashScreen">
+    <div class="splash-bg-gradient"></div>
+    <canvas id="splashStars"></canvas>
+    <div class="splash-center">
+      <div class="breathing-ring">
+        <div class="glowing-orb" id="glowingOrb"></div>
+      </div>
+      <div class="splash-logo-typing" id="splashLogoText">CalmConnect</div>
+      <div class="splash-tagline">Your safe space for calm, clarity, and connection.</div>
+      <button class="mute-btn" id="muteBtn" aria-label="Mute/Unmute"></button>
+      <audio id="splashAmbient" src="assets/audio/ambient.mp3" loop preload="auto"></audio>
+    </div>
+  </div>
+  <div id="mainApp" style="display:none;">
+    <canvas id="particles-bg"></canvas>
+    <nav class="topbar">
+      <div class="logo">CalmConnect</div>
+      <div class="topbar-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Theme">🌙</button>
+        <button id="musicToggle" class="icon-btn" aria-label="Music">🎵</button>
+        <div class="user-avatar" id="userAvatar">👤</div>
+      </div>
+    </nav>
+    <main class="dashboard-content">
+      <section class="mood-galaxy-section">
+        <div class="mood-galaxy-core"></div>
+        <div class="mood-galaxy-orbit">
+          <button class="mood-planet" data-mood="sad">
+            <span class="mood-emoji">😢</span>
+            <span class="mood-label">Sad</span>
+          </button>
+          <button class="mood-planet" data-mood="angry">
+            <span class="mood-emoji">😡</span>
+            <span class="mood-label">Angry</span>
+          </button>
+          <button class="mood-planet" data-mood="tired">
+            <span class="mood-emoji">😴</span>
+            <span class="mood-label">Tired</span>
+          </button>
+          <button class="mood-planet" data-mood="happy">
+            <span class="mood-emoji">😍</span>
+            <span class="mood-label">Happy</span>
+          </button>
+          <button class="mood-planet" data-mood="calm">
+            <span class="mood-emoji">😌</span>
+            <span class="mood-label">Calm</span>
+          </button>
+        </div>
+        <div id="moodMessage" class="mood-message"></div>
+      </section>
+      <section class="feature-panels">
+        <div class="feature-grid">
+          <div class="feature-card" data-tool="chatbot">
+            <span class="feature-icon">🤖</span>
+            <span class="feature-label">Talk to Bot</span>
+          </div>
+          <div class="feature-card" data-tool="breathing">
+            <span class="feature-icon">🧘</span>
+            <span class="feature-label">Breathing</span>
+          </div>
+          <div class="feature-card" data-tool="music">
+            <span class="feature-icon">🎵</span>
+            <span class="feature-label">Music</span>
+          </div>
+          <div class="feature-card" data-tool="moodfood">
+            <span class="feature-icon">🍲</span>
+            <span class="feature-label">MoodFood</span>
+          </div>
+          <div class="feature-card" data-tool="journal">
+            <span class="feature-icon">📔</span>
+            <span class="feature-label">Journal</span>
+          </div>
+          <div class="feature-card" data-tool="moodtracker">
+            <span class="feature-icon">📊</span>
+            <span class="feature-label">Mood Tracker</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="quote-bar">
+      <span id="dailyQuote"></span>
+      <button id="saveQuoteBtn" class="icon-btn" aria-label="Save to Journal">💾</button>
+    </div>
+    <audio id="ambientAudio" src="assets/audio/ambient.mp3" loop preload="auto"></audio>
+  </div>
+  <div id="customCursor"></div>
+  <script src="scripts.js"></script>
+</body>
+</html> 
